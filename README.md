@@ -6,15 +6,15 @@
 
 - `pip install simple-etl`
 
-#### Using poetry
+### Using poetry
 
     poetry add simple-etl
 
-#### Description
+### Description
 
 - Simple ETL is a transformation tool to convert data with a friendly configuration into a specific data structure usually a simple dictionary .
 
-#### Usage
+### Usage
 
 Imagine you have a dictionary containing your data like this:
 
@@ -47,7 +47,7 @@ print(output)
 # {'name': 'Guido', 'language': 'python', 'country': 'Netherlands'}
 ```
 
-#### Usage with custom functions
+### Usage with custom functions
 
 You can use a custom function to transform the given data using the "transform" key. this is the function signature that you must follow
 
