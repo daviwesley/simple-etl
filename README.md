@@ -75,7 +75,7 @@ etl_config = [
 
 output = transform_data(original_data, etl_config)
 print(output)
-# {'name': 'GUIDO', 'language': 'python', 'country': 'Netherlands'}
+# {'name': 'GUIDO','language': 'python', 'country': 'Netherlands', 'full_name': 'guido rossum'}
 ```
 
 As the example above the variable `etl_config` receive a lambda function that capture the value and use the built-in upper function to transform the output
