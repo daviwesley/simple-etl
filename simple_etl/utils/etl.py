@@ -1,6 +1,6 @@
 from typing import List
 
-from .object import rgetattr
+import jmespath
 
 
 def set_dot_notation(obj: dict, key: str, value: str) -> dict:
@@ -43,14 +43,14 @@ def transform_data(input: dict, mapping: List[dict], exclude_none=False) -> dict
 
     for item in mapping:
         if item.get("transform"):
-            value = rgetattr(input, item["from"])
+            value = jmespath.search(item["from"], input)
             value = (
                 item["transform"](value)
                 if item["transform"].__code__.co_argcount == 1
                 else item["transform"](value, input)
             )
         else:
-            value = rgetattr(input, item["from"])
+            value = jmespath.search(item["from"], input)
         set_dot_notation(output, item["to"], value)
     if exclude_none:
         output = remove_none(output)
